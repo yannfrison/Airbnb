@@ -55,6 +55,19 @@ const lieux = [
     site_web: "https://www.lignemaginot.com"
   },
   {
+    lat: 48.9717943031464, lng: 7.988162319516377, type: "resto",
+    nom: { fr: "Restaurant l’ Auberge de La Vieille Grange", en: "Restaurant l’ Auberge de La Vieille Grange", de: "Restaurant l’ Auberge de La Vieille Grange" },
+    desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
+    site_web: "http://www.lavieillegrangeseebach.com/",
+    adresse: "77 Rue des Églises, Seebach",
+    telephone: "+33388531840",
+    horaires: {
+      fr: "Jeu-Lun: 17:00-21:00 (Fermé Mar et Mer)",
+      en: "Thu-Mon: 17:00-21:00 (Closed Tue & Wed)",
+      de: "Don-Mon: 17:00-21:00 (Die & Mit geschlossen)"
+    }
+  },
+  {
     lat: 48.9698089, lng: 7.9875186, type: "resto",
     nom: { fr: "Restaurant à La Rose", en: "Restaurant à La Rose", de: "Restaurant à La Rose" },
     desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
@@ -62,16 +75,59 @@ const lieux = [
     adresse: "66 Rue des Forgerons, Seebach",
     telephone: "+33388947540",
     horaires: {
-      fr: "Mer-Sam : 11:00-14:00 / 17:00-22:00 | Dim : 11:00-14:30 / 17:00-21:00 (Fermé Lun et Mar)",
+      fr: "Mer-Sam: 11:00-14:00 / 17:00-22:00 | Dim: 11:00-14:30 / 17:00-21:00 (Fermé Lun & Mar)",
       en: "Wed-Sat: 11:00-14:00 / 17:00-22:00 | Sun: 11:00-14:30 / 17:00-21:00 (Closed Mon & Tue)",
-      de: "Mi-Sa: 11:00-14:00 / 17:00-22:00 | So: 11:00-14:30 / 17:00-21:00 (Mo & Di geschlossen)"
+      de: "Mit-Sam: 11:00-14:00 / 17:00-22:00 | Son: 11:00-14:30 / 17:00-21:00 (Mon & Die geschlossen)"
     }
   },
   {
-    lat: 48.974, lng: 7.992, type: "commerce",
-    nom: { fr: "Boulangerie du Village", en: "Village Bakery", de: "Dorfbäckerei" },
-    adresse: "12 rue principale",
-    telephone: "+33388000000"
+    lat: 48.96443569844939, lng: 7.999268955463723, type: "resto",
+    nom: { fr: "La Taverne", en: "La Taverne", de: "La Taverne" },
+    desc: { fr: "Cuisine greque", en: "Greek cuisine", de: "Griechische Küche" },
+    adresse: "43 Rue des Romains, Seebach",
+    telephone: "+33388092312",
+    horaires: {
+      fr: "Mar-Dim: 11:30-14:00 / 18:00-22:00 | Sam: 18:00-22:00 (Fermé Lun)",
+      en: "Tue-Sun: 11:30-14:00 / 18:00-22:00 | Sat: 18:00-22:00 (Closed Mon)",
+      de: "Die-Son: 11:30-14:00 / 18:00-22:00 | Sam: 18:00-22:00 (Mon geschlossen)"
+    }
+  },
+  {
+    lat: 48.969844080500195, lng: 7.989058417355533, type: "commerce",
+    nom: { fr: "Au Fournil de Seebach", en: "Au Fournil de Seebach", de: "Au Fournil de Seebach" },
+    desc: { fr: "Boulangerie", en: "Bakery", de: "Bäckerei" },
+    adresse: "90 Rue des Églises, Seebach",
+    telephone: "+33388070498",
+    horaires: {
+      fr: "Lun-Mar-Jeu-Ven: 4:45-14:00 | Mer-Sam: 4:45-13:00 | Dim: 4:45-12:00",
+      en: "Mon-Tue-Thu-Fri: 4:45-14:00 | Wed-Sat: 4:45-13:00 | Sun: 4:45-12:00",
+      de: "Mon-Die-Don-Fre: 4:45-14:00 | Mit-Sam: 4:45-13:00 | Son: 4:45-12:00"
+    }
+  },
+  {
+    lat: 48.96989729346783, lng: 7.988695672603085, type: "commerce",
+    nom: { fr: "Boucherie Foeller", en: "Butchery Foeller", de: "Metzgerei Foeller" },
+    adresse: "67 Rue des Églises, Seebach",
+    site_web: "https://traiteur-foeller.eatbu.com/?lang=fr",
+    telephone: "+33388947405",
+    horaires: {
+      fr: "Lun-Mar-Mer-Sam: 8:00-12:00 | Jeu-Ven: 8:00-18:00 (Fermé Dim)",
+      en: "Mon-Tue-Wed-Sat: 8:00-12:00 | Thu-Fri: 8:00-18:00 (Closed Sun)",
+      de: "Mon-Die-Mit-Sam: 8:00-12:00 | Don-Fre: 8:00-18:00 (Son geschlossen)"
+    }
+  },
+  {
+    lat: 48.97076448606624, lng: 7.990083307862471, type: "commerce",
+    nom: { fr: "Carrefour Contact Seebach", en: "Carrefour Contact Seebach", de: "Carrefour Contact Seebach" },
+    desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
+    site_web: "https://carrefourseebach.com/",
+    adresse: "2b Rue de la Paix, Seebach",
+    telephone: "+33820434546",
+    horaires: {
+      fr: "Lun-Sam: 8:00-19:00 (Fermé Dim)",
+      en: "Mon-Sat: 8:00-19:00 (Closed Sun)",
+      de: "Mon-Sam: 8:00-19:00 (Son geschlossen)"
+    }
   }
 ];
 
