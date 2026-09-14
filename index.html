@@ -50,9 +50,15 @@ const lieux = [
   {
     lat: 49.0016, lng: 7.9482, type: "tourisme",
     nom: { fr: "Ligne Maginot", en: "Maginot Line", de: "Maginot-Linie" },
-    desc: { fr: "Ouvrage fortifié à visiter", en: "Fortified line to visit", de: "Festungswerk" },
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Ouvrage_Schoenenbourg.jpg/320px-Ouvrage_Schoenenbourg.jpg",
+    desc: { fr: "bunker de la seconde guerre mondiale", en: "Second World War bunker", de: "Bunker aus dem Zweiten Weltkrieg" },
     site_web: "https://www.lignemaginot.com"
+    adresse: "Rue Commandant Martial Reynier, Hunspach",
+    telephone: "+33388809619",
+    horaires: {
+      fr: "Lun-Ven: 14:00-16:00 | Sam-Dim 9:30-16:00",
+      en: "Mon-Fri: 14:00-16:00 | Sat-Sun 9:30-16:00",
+      de: "Mon-Fre: 14:00-16:00 | Sam-Son 9:30-16:00"
+    }
   },
   {
     lat: 48.9717943031464, lng: 7.988162319516377, type: "resto",
@@ -80,7 +86,32 @@ const lieux = [
       de: "Die-Sam: 11:00-21:00 | Son: 11:00-15:00 (Mon geschlossen)"
     }
   },
-
+  {
+    lat: 49.02081964888375, lng: 7.96698003653938, type: "resto",
+    nom: { fr: "On S’en Flamme", en: "On S’en Flamme", de: "On S’en Flamme" },
+    desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
+    site_web: "https://www.brasserie-onsenflamme.fr/",
+    adresse: "6 Rue Alfred Kastler, Wissembourg",
+    telephone: "+33388868856",
+    horaires: {
+      fr: "Mer-Jeu-Ven: 12:00-14:00 17:30-21:30 | Sam-Dim: 17:30-22:00 (Fermé Lun et Mar)",
+      en: "Wed-Thu-Fri: 12:00-14:00 17:30-21:30 | Sat-Sun: 17:30-22:00 (Closed Mon and Tue)",
+      de: "Mit-Don-Fre: 12:00-14:00 17:30-21:30 | Sam-Son: 17:30-22:00 (Mon und Die geschlossen)"
+    }
+  },
+  {
+    lat: 49.05103959238051, lng: 7.955649674605502, type: "resto",
+    nom: { fr: "Weinstube Jülg", en: "Weinstube Jülg", de: "Weinstube Jülg" },
+    desc: { fr: "Restaurant semi-gastonomique, cuisine française et allemande", en: "Fine dining restaurant, French and German cuisine", de: "Gehobenes Restaurant, Französische und deutsche Küche" },
+    site_web: "https://www.weingut-juelg.de/#!/de/die-weinstube",
+    adresse: "Hauptstraße 1, 76889 Schweigen-Rechtenbach-Schweigen",
+    telephone: "+496342919089",
+    horaires: {
+      fr: "Lun-Ven-Sam-Dim: 12:00–15:00 17:00–21:30 (Fermé Mar, Mer et Jeu)",
+      en: "Mon-Fri-Sat-Sun: 12:00–15:00 17:00–21:30 (Closed Tue, Wed and Thu)",
+      de: "Mon-Fre-Sam-Son: 12:00–15:00 17:00–21:30 (Die, Mit und Don geschlossen)"
+    }
+  },
   {
     lat: 48.9698089, lng: 7.9875186, type: "resto",
     nom: { fr: "Restaurant à La Rose", en: "Restaurant à La Rose", de: "Restaurant à La Rose" },
@@ -155,6 +186,42 @@ const lieux = [
     }
   },
   {
+    lat: 49.03049062642089, lng: 7.9546512222358325, type: "commerce",
+    nom: { fr: "Lidl", en: "Lidl", de: "Lidl" },
+    adresse: "4 All. des Peupliers Altenstadt, Wissembourg",
+    desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
+    site_web: "https://www.lidl.fr/",
+    horaires: {
+      fr: "Lun-Sam: 8:00-20:00 (Fermé Dim)",
+      en: "Mon-Sat: 8:00-20:00 (Closed Sun)",
+      de: "Mon-Sam: 8:00-20:00 (Son geschlossen)"
+    }
+  },
+  {
+    lat: 48.929665909455885, lng: 7.899253279934793, type: "commerce",
+    nom: { fr: "E.Leclerc", en: "E.Leclerc", de: "E.Leclerc" },
+    adresse: "2 Rue Georges Chretien Rosentritt, Soultz-sous-Forêts",
+    desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
+    site_web: "https://e.leclerc/mag/e-leclerc-soultz-sous-forets",
+    horaires: {
+      fr: "Lun-Sam: 8:00-19:30 (Fermé Dim)",
+      en: "Mon-Sat: 8:00-19:30 (Closed Sun)",
+      de: "Mon-Sam: 8:00-19:30 (Son geschlossen)"
+    }
+  },
+  {
+    lat: 49.026908807704146, lng: 7.947579651206666, type: "commerce",
+    nom: { fr: "Supermarché Match", en: "Supermarket Match", de: "Supermarkt Match" },
+    adresse: "33 Rte de la Pépinière, Wissembourg",
+    site_web: "https://www.supermarchesmatch.fr/",
+    telephone: "+33388542654",
+    horaires: {
+      fr: "Lun-Sam: 8:00-20:00 (Fermé Dim)",
+      en: "Mon-Sat: 8:00-20:00 (Closed Sun)",
+      de: "Mon-Sam: 8:00-20:00 (Son geschlossen)"
+    }
+  },
+  {
     lat: 48.97076448606624, lng: 7.990083307862471, type: "commerce",
     nom: { fr: "Carrefour Contact Seebach", en: "Carrefour Contact Seebach", de: "Carrefour Contact Seebach" },
     desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
@@ -174,8 +241,8 @@ function genererContenuPopup(lieu) {
   html += '<h3 style="color:#ff4d4d;margin:0 0 10px 0;font-size:16px;">' + lieu.nom[langue] + '</h3>';
   if (lieu.image) { html += '<img src="' + lieu.image + '" style="width:100%;border-radius:8px;margin-bottom:10px;max-height:120px;object-fit:cover;" alt="">'; }
   if (lieu.desc && lieu.desc[langue]) { html += '<p style="margin:0 0 10px 0;color:#555;font-size:13px;">' + lieu.desc[langue] + '</p>'; }
-  if (lieu.adresse) { html += '<p style="margin:0 0 5px 0;font-size:12px;color:#777;">📍 ' + lieu.adresse + '</p>'; }
-  if (lieu.telephone) { html += '<p style="margin:0 0 10px 0;font-size:12px;color:#777;">📞 ' + lieu.telephone + '</p>'; }
+  if (lieu.adresse) { html += '<p style="margin:0 0 5px 0;font-size:12px;color:#777;">' + lieu.adresse + '</p>'; }
+  if (lieu.telephone) { html += '<p style="margin:0 0 10px 0;font-size:12px;color:#777;">' + lieu.telephone + '</p>'; }
   if (lieu.horaires && lieu.horaires[langue]) { html += '<p style="margin:0 0 10px 0;font-size:12px;color:#777;">🕒 ' + lieu.horaires[langue] + '</p>'; }
   if (lieu.site_web) { html += '<a href="' + lieu.site_web + '" target="_blank" style="display:inline-block;background-color:#ff4d4d;color:white;padding:8px 15px;text-decoration:none;border-radius:5px;font-weight:bold;font-size:13px;margin-top:5px;">' + texteUI.boutonVisiter + '</a>'; }
   html += '</div>';
