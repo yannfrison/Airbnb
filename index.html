@@ -52,6 +52,7 @@ const lieux = [
     nom: { fr: "Ligne Maginot", en: "Maginot Line", de: "Maginot-Linie" },
     desc: { fr: "bunker de la seconde guerre mondiale", en: "Second World War bunker", de: "Bunker aus dem Zweiten Weltkrieg" },
     site_web: "https://www.lignemaginot.com",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/75/Fort_Schoenenbourg_FRA_001.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original",
     adresse: "Rue Commandant Martial Reynier, Hunspach",
     telephone: "+33388809619",
     horaires: {
@@ -61,10 +62,52 @@ const lieux = [
     }
   },
   {
+    lat: 48.99821861952583, lng: 7.856062325767895, type: "tourisme",
+    nom: { fr: "Chemin des Cimes Alsace", en: "Treetop Walk", de: "Baumwipfelpfad" },
+    site_web: "https://treetop-walks.com/alsace/",
+    adresse: "Route de Schoenenbourg, Drachenbronn-Birlenbach",
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219006613_1-1200x800.jpg",
+    telephone: "+33369508600",
+    horaires: {
+      fr: "Lun-Dim: 10:00-19:00 (Fermé Mar)",
+      en: "Mon-Sun: 10:00-19:00 (Closed Tue) ",
+      de: "Mon-Son: 10:00-19:00 (Die geschlossen)"
+    }
+  },
+  {
+    lat: 49.044617086593846, lng: 7.771684772544212, type: "tourisme",
+    nom: { fr: "Chateau du Fleckenstein", en: "Fleckenstein Castle", de: "Burg Fleckenstein" },
+    desc: { fr: "Château datant du Moyen Âge", en: "Medieval castle", de: "Mittelalterliche Burg" },
+    site_web: "http://www.fleckenstein.fr/",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl2rBEZUK-cs2fxckrGgFvt1osxJ3H9C2qavCdy_4HxzES8I0q_7Mn7BGK&s=10",
+    adresse: "Rue Commandant Martial Reynier, Hunspach",
+    telephone: "+33388942852",
+    horaires: {
+      fr: "Lun-Dim: 10:00-17:30",
+      en: "Mon-Sun: 10:00-17:30",
+      de: "Mon-Son: 10:00-17:30"
+    }
+  },
+  {
+    lat: 49.03673464614578, lng: 7.942872613206468, type: "tourisme",
+    nom: { fr: "Office de Tourisme", en: "Tourist information center", de: "Tourismusbüro" },
+    desc: { fr: "Trouvez les inforamtions concernant les sites touristiques", en: "Find information about tourist attractions", de: "Finden Sie hier alle Informationen zu den Sehenswürdigkeiten" },
+    image: "https://www.visit.alsace/wp-content/uploads/lei/pictures/219005691-office-de-tourisme-de-lalsace-verte-bureau-dinformation-de-wissembourg-2-1600x900.jpg",
+    site_web: "http://www.alsace-verte.com/",
+    adresse: "2 Pl. du Saumon, Wissembourg",
+    telephone: "+33388808970",
+    horaires: {
+      fr: "Lun-Dim: 09:45–12:00 13:45–17:30",
+      en: "Mon-Sun: 09:45–12:00 13:45–17:30",
+      de: "Mon-Son: 09:45–12:00 13:45–17:30"
+    }
+  },
+  {
     lat: 48.9717943031464, lng: 7.988162319516377, type: "resto",
     nom: { fr: "Restaurant l’ Auberge de La Vieille Grange", en: "Restaurant l’ Auberge de La Vieille Grange", de: "Restaurant l’ Auberge de La Vieille Grange" },
     desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
     site_web: "http://www.lavieillegrangeseebach.com/",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/76/9f/1b/caption.jpg?w=1200&h=1200&s=1",
     adresse: "77 Rue des Églises, Seebach",
     telephone: "+33388531840",
     horaires: {
@@ -78,6 +121,7 @@ const lieux = [
     nom: { fr: "La Mirabelle", en: "La Mirabelle", de: "La Mirabelle" },
     desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
     site_web: "https://restaurant-lamirabelle.eatbu.com/",
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219005739_5.jpg",
     adresse: "3 Rue du Général Leclerc, Wissembourg",
     telephone: "+33388543341",
     horaires: {
@@ -91,6 +135,7 @@ const lieux = [
     nom: { fr: "On S’en Flamme", en: "On S’en Flamme", de: "On S’en Flamme" },
     desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
     site_web: "https://www.brasserie-onsenflamme.fr/",
+    image: "https://www.brasserie-onsenflamme.fr/wp-content/uploads/go-x/u/51ee885a-f44e-48c3-8575-6b3f0272de86/l0,t250,w1500,h1500/image-768x768.jpg",
     adresse: "6 Rue Alfred Kastler, Wissembourg",
     telephone: "+33388868856",
     horaires: {
@@ -104,6 +149,7 @@ const lieux = [
     nom: { fr: "Weinstube Jülg", en: "Weinstube Jülg", de: "Weinstube Jülg" },
     desc: { fr: "Restaurant semi-gastonomique, cuisine française et allemande", en: "Fine dining restaurant, French and German cuisine", de: "Gehobenes Restaurant, Französische und deutsche Küche" },
     site_web: "https://www.weingut-juelg.de/#!/de/die-weinstube",
+    image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/b2/64/7e/weinstube-julg-innenansicht.jpg?w=1200&h=1200&s=1",
     adresse: "Hauptstraße 1, 76889 Schweigen-Rechtenbach-Schweigen",
     telephone: "+496342919089",
     horaires: {
@@ -117,6 +163,7 @@ const lieux = [
     nom: { fr: "Restaurant à La Rose", en: "Restaurant à La Rose", de: "Restaurant à La Rose" },
     desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
     site_web: "https://rose-seebach.fr/",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qjziVbuT7tFqjAHNbZL2XOnu0GO6FlMAwekrk6qePODlVwHkoD7YpW0&s=10",
     adresse: "66 Rue des Forgerons, Seebach",
     telephone: "+33388947540",
     horaires: {
@@ -129,6 +176,7 @@ const lieux = [
     lat: 48.96443569844939, lng: 7.999268955463723, type: "resto",
     nom: { fr: "La Taverne", en: "La Taverne", de: "La Taverne" },
     desc: { fr: "Cuisine greque", en: "Greek cuisine", de: "Griechische Küche" },
+    image: "https://scontent-cdg4-1.xx.fbcdn.net/v/t39.30808-6/469161737_122202058232225048_4239459372978976595_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=IzRihMdKSfsQ7kNvwEWeEfN&_nc_oc=Adq0kCWpiXnm8cWIIKFrRVIn2-iQuGyfkU91iqj1SYKnn3V9EXJtLpEIXeARyosFs3o&_nc_zt=23&_nc_ht=scontent-cdg4-1.xx&_nc_gid=9t_o-LWIBbFLjzDzMhODYQ&_nc_ss=7a2a8&oh=00_AQLm5Z85JYWyAwVSmBSDsFgl5K2WkcVvZV9sKVEHDcS_IA&oe=6AAF04C5",
     adresse: "43 Rue des Romains, Seebach",
     telephone: "+33388092312",
     horaires: {
@@ -141,6 +189,7 @@ const lieux = [
     lat: 48.99230086395722, lng: 8.026305095153237, type: "resto",
     nom: { fr: "Brasserie de la Gare", en: "Brasserie de la Gare", de: "Brasserie de la Gare" },
     desc: { fr: "Tartes flambées et cuisine française", en: "Tarte flambée and French cuisine", de: "Flammkuchen und französische Küche" },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219005713_10.jpg",
     adresse: "74 Rue Principale, Schleithal",
     telephone: "+33388738027",
     horaires: {
@@ -162,10 +211,37 @@ const lieux = [
     }
   },
   {
+    lat: 49.03656946090695, lng: 7.946257319036893, type: "commerce",
+    nom: { fr: "Au Petit Kougelhopf", en: "Au Petit Kougelhopf", de: "Au Petit Kougelhopf" },
+    desc: { fr: "Boulangerie", en: "Bakery", de: "Bäckerei" },
+    image: "https://www.bonjour-elsass.de/wp-content/uploads/2016/08/foto-1-11.jpg"
+    adresse: "20 Rue nationale, Wissembourg",
+    telephone: "+33388940056",
+    horaires: {
+      fr: "Mer-Jeu-Ven: 7:00-18:00 | Sam-Dim: 7:00-17:00 (Fermé Lun & Mar)",
+      en: "Wed-Thu-Fri: 7:00-18:00 | Sat-Sun: 7:00-17:00 (Closed Mon & Tue)",
+      de: "Mit-Don-Fre: 7:00-18:00 | Sam-Son: 7:00-17:00 (Mon & Die geschlossen)"
+    }
+  },
+  {
+    lat: 48.95335220486241, lng: 7.939271849389076, type: "commerce",
+    nom: { fr: "Boulangerie Pâtisserie Fischer", en: "Bakery Fischer", de: "Bäckerei Fischer" },
+    desc: { fr: "Boulangerie", en: "Bakery", de: "Bäckerei" },
+    image: "https://www.bonjour-elsass.de/wp-content/uploads/2016/08/foto-1-11.jpg"
+    adresse: "52 Rue Principale, Hunspach",
+    telephone: "+33388804236",
+    horaires: {
+      fr: "Lun-Ven: 5:00-12:30 15:00 18:30 | Sam: 5:00-12:30 15:00 18:30 (Fermé Dim)",
+      en: "Mon-Fri: 5:00-12:30 15:00 18:30 | Sat: 5:00-12:30 15:00 18:30 (Closed Sun)",
+      de: "Mon-Fre: 5:00-12:30 15:00 18:30 | Sam: 5:00-12:30 15:00 18:30 (Son geschlossen)"
+    }
+  },
+  {
     lat: 48.96989729346783, lng: 7.988695672603085, type: "commerce",
     nom: { fr: "Boucherie Foeller", en: "Butchery Foeller", de: "Metzgerei Foeller" },
     adresse: "67 Rue des Églises, Seebach",
     site_web: "https://traiteur-foeller.eatbu.com/",
+    image: "https://cdn.website.dish.co/media/56/4e/4731345/BOUCHERIE-CHARCUTERIE-FOELLER-6-jpg.jpg",
     telephone: "+33388947405",
     horaires: {
       fr: "Lun-Mar-Mer-Sam: 8:00-12:00 | Jeu-Ven: 8:00-18:00 (Fermé Dim)",
@@ -178,6 +254,7 @@ const lieux = [
     nom: { fr: "Boucherie Sigrist", en: "Butchery Sigrist", de: "Metzgerei Sigrist" },
     adresse: "158 Rue Principale, Schleithal",
     site_web: "http://www.traiteur-sigrist.net/",
+    image: "https://www.traiteur-sigrist.net/upload/galerie/DSC04472.JPG",
     telephone: "+33388943111",
     horaires: {
       fr: "Mar-Jeu-Ven: 8:00-12:00 14:30-18:00 | Mer: 8:00-12:00 | Sam: 8:00-12:00 14:00-16:00 (Fermé Dim et Lun)",
@@ -191,6 +268,7 @@ const lieux = [
     adresse: "4 All. des Peupliers Altenstadt, Wissembourg",
     desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
     site_web: "https://www.lidl.fr/",
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219007815_12020-1200x812.jpg",
     horaires: {
       fr: "Lun-Sam: 8:00-20:00 (Fermé Dim)",
       en: "Mon-Sat: 8:00-20:00 (Closed Sun)",
@@ -203,6 +281,7 @@ const lieux = [
     adresse: "2 Rue Georges Chretien Rosentritt, Soultz-sous-Forêts",
     desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
     site_web: "https://e.leclerc/mag/e-leclerc-soultz-sous-forets",
+    image: "https://medias.referentiel.galec.net/GALEC/Magasins/BIM/1658304428551.jpeg",
     horaires: {
       fr: "Lun-Sam: 8:00-19:30 (Fermé Dim)",
       en: "Mon-Sat: 8:00-19:30 (Closed Sun)",
@@ -210,22 +289,11 @@ const lieux = [
     }
   },
   {
-    lat: 49.026908807704146, lng: 7.947579651206666, type: "commerce",
-    nom: { fr: "Supermarché Match", en: "Supermarket Match", de: "Supermarkt Match" },
-    adresse: "33 Rte de la Pépinière, Wissembourg",
-    site_web: "https://www.supermarchesmatch.fr/",
-    telephone: "+33388542654",
-    horaires: {
-      fr: "Lun-Sam: 8:00-20:00 (Fermé Dim)",
-      en: "Mon-Sat: 8:00-20:00 (Closed Sun)",
-      de: "Mon-Sam: 8:00-20:00 (Son geschlossen)"
-    }
-  },
-  {
     lat: 48.97076448606624, lng: 7.990083307862471, type: "commerce",
     nom: { fr: "Carrefour Contact Seebach", en: "Carrefour Contact Seebach", de: "Carrefour Contact Seebach" },
     desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
     site_web: "https://carrefourseebach.com/",
+    image: "https://partoo-business-photos-test.s3.amazonaws.com/prod/2fa98370-72e4-423f-b800-672875413991.jpg",
     adresse: "2b Rue de la Paix, Seebach",
     telephone: "+33820434546",
     horaires: {
