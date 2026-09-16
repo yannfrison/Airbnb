@@ -25,9 +25,9 @@ if (langue !== 'fr' && langue !== 'en' && langue !== 'de') {
 }
 
 const traductions = {
-  fr: { logementTitre: "Mon Logement", logementDesc: "67 rue des forgerons, Seebach", filtreCommerce: "Commerces", filtreTourisme: "Sites Touristiques", filtreResto: "Restaurant", boutonVisiter: "Visiter le site" },
-  en: { logementTitre: "My Accommodation", logementDesc: "67 rue des forgerons, Seebach", filtreCommerce: "Shops", filtreTourisme: "Tourist Sites", filtreResto: "Restaurant", boutonVisiter: "Visit website" },
-  de: { logementTitre: "Meine Unterkunft", logementDesc: "67 rue des forgerons, Seebach", filtreCommerce: "Geschäfte", filtreTourisme: "Sehenswürdigkeiten", filtreResto: "Restaurant", boutonVisiter: "Website besuchen" }
+  fr: { logementTitre: "Mon Logement", logementDesc: "67 rue des forgerons, Seebach", filtreCommerce: "Commerces", filtreTourisme: "Sites Touristiques", filtreResto: "Restaurant", filtreLoisir: " Loisirs", boutonVisiter: "Visiter le site" },
+  en: { logementTitre: "My Accommodation", logementDesc: "67 rue des forgerons, Seebach", filtreCommerce: "Shops", filtreTourisme: "Tourist Sites", filtreResto: "Restaurant", filtreLoisir: " Leisure", boutonVisiter: "Visit website" },
+  de: { logementTitre: "Meine Unterkunft", logementDesc: "67 rue des forgerons, Seebach", filtreCommerce: "Geschäfte", filtreTourisme: "Sehenswürdigkeiten", filtreResto: "Restaurant", filtreLoisir: " Freizeit", boutonVisiter: "Website besuchen" }
 };
 const texteUI = traductions[langue];
 
@@ -38,6 +38,7 @@ const iconeRouge = new L.Icon({ iconUrl: 'https://raw.githubusercontent.com/poin
 const iconeVerte = new L.Icon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png', shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41] });
 const iconeBleue = new L.Icon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png', shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41] });
 const iconeJaune = new L.Icon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png', shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41] });
+const iconeNoire = new L.Icon({ iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png', shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41] });
 
 const marqueurLogement = L.marker([48.9691072, 7.9873084], { icon: iconeRouge }).addTo(maCarte);
 marqueurLogement.bindPopup('<div style="text-align:center;font-family:sans-serif;"><h3 style="color:#ff4d4d;margin:0 0 10px 0;">' + texteUI.logementTitre + '</h3><p style="margin:0;color:#555;">' + texteUI.logementDesc + '</p></div>').openPopup();
@@ -45,6 +46,7 @@ marqueurLogement.bindPopup('<div style="text-align:center;font-family:sans-serif
 const calqueCommerces = L.layerGroup().addTo(maCarte);
 const calqueTourisme = L.layerGroup().addTo(maCarte);
 const calqueResto = L.layerGroup().addTo(maCarte);
+const calqueLoisir = L.layerGroup().addTo(maCarte);
 
 const lieux = [
   {
@@ -97,10 +99,109 @@ const lieux = [
     adresse: "2 Pl. du Saumon, Wissembourg",
     telephone: "+33388808970",
     horaires: {
-      fr: "Lun-Dim: 09:45–12:00 13:45–17:30",
-      en: "Mon-Sun: 09:45–12:00 13:45–17:30",
+      fr: "Lun-Dim: 09:45-12:00 13:45–17:30",
+      en: "Mon-Sun: 09:45-12:00 13:45–17:30",
       de: "Mon-Son: 09:45–12:00 13:45–17:30"
     }
+  },
+  {
+    lat: 49.03584763762798, lng: 7.944473681704224, type: "tourisme",
+    nom: { fr: "Kelsch d'Alsace", en: "Alsatian kelsch", de: "Elsässischer Kelsch" },
+    desc: { fr: "Boutique du tissu traditionel alsacien", en: "Traditional Alsatian fabric shop", de: "Laden für traditionelle elsässische Stoffe" },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219005505_6.jpg",
+    site_web: "http://www.kelschdalsace.com/",
+    adresse: "16 Rue de la République, Wissembourg",
+    telephone: "+33388947719",
+    horaires: {
+      fr: "Mer-Jeu-Ven: 10:00-12:00 14:00 18:00 | Mar: 14:00-18:00 | Sam: 10:00-17:00 (Fermé Lun et Dim)",
+      en: "Wed-Thu-Fri: 10:00-12:00 14:00 18:00 | Tue: 14:00-18:00 | Sat: 10:00-17:00 (Closed Mon and Sun)",
+      de: "Mit-Don-Fre: 10:00-12:00 14:00 18:00 | Die: 14:00-18:00 | Sam: 10:00-17:00 (Mon und Son geschlossen)"
+    }
+  },
+  {
+    lat: 48.97297861308413, lng: 7.988066961266856, type: "tourisme",
+    nom: { fr: "Cave Jülg", en: "Jülg Winery", de: "Weingut Jülg" },
+    desc: { fr: "Producteur de vins alsaciens", en: "Alsatian wine producer", de: "Elsässischer Winzer" },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219005454_6.jpg",
+    site_web: "https://vins-julg.fr/",
+    adresse: "116 Rue des Églises, Seebach",
+    telephone: "+33388947998",
+    horaires: {
+      fr: "Mer-Jeu-Ven: 13:30-17:30 | Sam: 09:00-12:00 13:00-17:00 (Fermé Lun, Mar et Dim)",
+      en: "Wed-Thu-Fri: 13:30-17:30 | Sat: 09:00-12:00 13:00-17:00 (Closed Mon, Tue and Sun)",
+      de: "Mit-Don-Fre: 13:30-17:30 | Sam: 09:00-12:00 13:00-17:00 (Mon, Die und Son geschlossen)"
+    }
+  },
+  {
+    lat: 49.01277159677849, lng: 7.894378800443654, type: "tourisme",
+    nom: { fr: "Cave de Cleebourg", en: "Cleebourg's Winery", de: "Weingut Cleebourg" },
+    desc: { fr: "Producteur de vins alsaciens", en: "Alsatian wine producer", de: "Elsässischer Winzer" },
+    image: "https://www.vins-des-hospices-de-strasbourg.fr/data/uploads/2017/12/Cave-Cleebourg-interieur-cave-1.jpg",
+    site_web: "http://www.cave-cleebourg.fr/",
+    adresse: "Rte du Vin, Cleebourg",
+    telephone: "+33388945033",
+    horaires: {
+      fr: "Lun-Dim:  08:00–12:00 13:30–18:00",
+      en: "Mon-Sun:  08:00–12:00 13:30–18:00",
+      de: "Mon-Son:  08:00–12:00 13:30–18:00"
+
+    }
+  },
+  {
+    lat: 48.93396905707488, lng: 7.856594817259457, type: "tourisme",
+    nom: { fr: "Maison Rurale", en: "Maison Rurale", de: "Maison Rurale" },
+    desc: { fr: "Musée de la maison alsacienne", en: "Museum of the Alsatian House", de: "Museum des elsässischen Hauses" },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219006470_112.jpg",
+    site_web: "http://www.maison-rurale.fr/",
+    adresse: "1 Rue de l'Église, Kutzenhausen",
+    telephone: "+33388805300",
+    horaires: {
+      fr: "Mar-Dim: 11:00-18:00 (Fermé Lun)",
+      en: "Tue-Sun: 11:00-18:00 (Closed Mon)",
+      de: "Die-Son: 11:00-18:00 (Mon geschlossen)"
+    }
+  },
+  {
+    lat: 48.89978107631961, lng: 7.913831789462724, type: "tourisme",
+    nom: { fr: "Musée de la Poterie", en: "Pottery Museum", de: "Töpfereimuseum" },
+    desc: { fr: "Musée sur la poterie locale", en: "Museum of the local Pottery", de: "Museum für lokale Töpferei" },
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c7/Mus%C3%A9e_de_la_poterie-Betschdorf_%288%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original",
+    site_web: "https://www.betschdorf.com/vie-culturelle-et-associative/musee-de-la-poterie",
+    adresse: "2 Rue de Kuhlendorf, Betschdorf",
+    telephone: "+33388544807",
+    horaires: {
+      fr: "Mar-Sam: 10:00–12:00 13:00–18:00 | Dim: 14:00–18:00 (Fermé Lun)",
+      en: "Tue-Sun: 10:00–12:00 13:00–18:00 | Sun: 14:00–18:00 (Closed Mon)",
+      de: "Die-Son: 10:00–12:00 13:00–18:00 | Son: 14:00–18:00 (Mon geschlossen)"
+    }
+  },
+  {
+    lat: 48.885018025241116, lng: 7.789224640011218, type: "tourisme",
+    nom: { fr: "Musée Mémorial 1870 - 1945", en: "1870–1945 Memorial Museum", de: "Gedenkmuseum 1870–1945" },
+    desc: { fr: "Musée sur les guerres en Alsace (1870-1871, 1914-1918, 1939-1945)", en: "Museum on the Wars in Alsace (1870–1871, 1914–1918, 1939–1945)", de: "Museum der Kriege im Elsass (1870–1871, 1914–1918, 1939–1945)" },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219006256_2-1200x800.jpg",
+    site_web: "http://www.2mcladn.fr/",
+    adresse: "Rue de l'Église, Walbourg",
+    telephone: "+33682709363",
+    horaires: {
+      fr: "Mer-Dim: 14:00–18:00 (Fermé Lun, Mar, Jeu, Ven et Sam)",
+      en: "Wed-Sun: 14:00–18:00 (Closed Mon, Tue, Thu, Fri, Sat)",
+      de: "Mit-Son: 14:00–18:00 (Mon, Die, Don, Fre, Sam geschlossen)"
+    }
+  },
+  {
+    lat: 49.03679720969042, lng: 7.944484746657208, type: "tourisme",
+    nom: { fr: "Centre ville de Wissembourg", en: "Wissembourg Town Centre", de: "Stadtzentrum von Wissembourg" },
+    desc: { fr: "Balade au centre-ville pour admirer ses remparts, ses parcs et son architecture...", en: "Stroll through the town centre to admire its ramparts, parks, and architecture...", de: "Spaziergang durch die Altstadt, um ihre Stadtmauern, Parks und Architektur zu bewundern..." },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219005493_15-1200x937.jpg",
+    adresse: "Wissembourg",
+  },
+  {
+    lat: 48.953437492678816, lng: 7.941316548296566, type: "tourisme",
+    nom: { fr: "Centre ville de Hunspach", en: "Hunspach Town Centre", de: "Stadtzentrum von Hunspach" },
+    desc: { fr: "Élu « Village préféré des Français » en 2020, profitez d'une balade au cœur du village pour admirer ses célèbres maisons alsaciennes blanches.", en: ""Favorite Village of the French 2020", stroll through the village centre to admire traditional white Alsatian houses", de: "2020 zum „Lieblingsdorf der Franzosen“ gewählt: Genießen Sie einen Spaziergang durch den Ortskern und bewundern Sie die berühmten weißen Fachwerkhäuser." },
+    image: "https://media.les-plus-beaux-villages-de-france.org/photos/s1620/hunspach-visite-village-fleuri.webp",
+    adresse: "Hunspach",
   },
   {
     lat: 48.9717943031464, lng: 7.988162319516377, type: "resto",
@@ -199,6 +300,58 @@ const lieux = [
     }
   },
   {
+    lat: 48.966279059864064, lng: 8.164950786396181, type: "loisir",
+    nom: { fr: "Plage des Mouettes", en: "Seagull Beach", de: "Badestrand" },
+    adresse: "Plage des Mouettes, Lauterbourg",
+    site_web: "https://www.mairie-lauterbourg.fr/FR/Mes-loisirs/Base-loisirs/Plage-Mouettes.html",
+    image: "https://www.mairie-lauterbourg.fr/dynamic/images/illustration_pages/mes_loisirs/plage/cac_/fb_img_1692619181484!_267x200!_3!_0x0!_0!_FFFFFF.jpg",
+    horaires: {
+      fr: "Lun-Dim: 10:00-20:00 (De Juin à Septembre)",
+      en: "Mon-Sun: 10:00-20:00 (From June to September)",
+      de: "Mon-Son: 10:00-20:00 (Von Juni bis September)"
+    }
+  },
+  {
+    lat: 48.96529058432554, lng: 8.175536515392492, type: "loisir",
+    nom: { fr: "Base Nautique de Lauterbourg", en: "Lauterbourg Watersports Centre", de: "Wassersportzentrum Lauterbourg" },
+    desc: { fr: "Catamarans, Bateau, Paddle, Planche à voile, Dériveurs, Kitesurf", en: "Catamarans, Boats, Stand-up paddleboards, Windsurfs, Dinghies, Kitesurfs", de: "Katamaran, Boot, Stand-up-Paddle, Windsurfen, Jollen, Kitesurfen" },
+    adresse: "Rte du Rhin, Lauterbourg",
+    site_web: "https://beceric.wixsite.com/my-site-2",
+    image: "https://cdn-s-www.dna.fr/images/4A3D6906-0B1A-4CC8-BA0A-F9E0B1C43F84/MF_contenu/decouverte-des-joies-de-la-glisse-a-la-base-nautique-1657201796.jpg",
+    telephone: "+33388948032"
+    horaires: {
+      fr: "Lun-Dim: 10:00-20:00 (De Juin à Septembre)",
+      en: "Mon-Sun: 10:00-20:00 (From June to September)",
+      de: "Mon-Son: 10:00-20:00 (Von Juni bis September)"
+    }
+  },
+  {
+    lat: 48.8948274315591, lng: 7.911519818733646, type: "loisir",
+    nom: { fr: "Piscine de Betschdorf", en: "Betschdorf Swimming Pool", de: "Schwimmbad Betschdorf" },
+    image: "https://piscineinfoservice.com/wp-content/uploads/2022/02/piscine-betschdorf-61.webp",
+    site_web: "https://www.betschdorf.com/equipements-de-sports-et-loisirs/piscine",
+    adresse: "1 Rue du Bannholz, Betschdorf",
+    telephone: "+33388544392",
+    horaires: {
+      fr: "Mar: 17:00–21:00 | Jeu: 08:00–10:30 17:00–21:00 | Sam: 14:00–19:00 | Dim: 09:00–12:00 14:00–17:00 (fermé Lun, Mer et Ven)",
+      en: "Tue: 17:00–21:00 | Thu: 08:00–10:30 17:00–21:00 | Sat: 14:00–19:00 | Sun: 09:00–12:00 14:00–17:00 (Closed Mon, Wed and Fri)",
+      de: "Die: 17:00–21:00 | Don: 08:00–10:30 17:00–21:00 | Sam: 14:00–19:00 | Son: 09:00–12:00 14:00–17:00 (Mon, Mit und Fre geschlossen)"
+    }
+  },
+  {
+    lat: 48.8948274315591, lng: 7.911519818733646, type: "loisir",
+    nom: { fr: "Piscine de Drachenbronn", en: "Drachenbronn Swimming Pool", de: "Schwimmbad Drachenbronn" },
+    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219005755_45.jpg",
+    site_web: "https://www.drachenbronn-birlenbach.fr/Vie-pratique/Piscine-7-Fontaines.html",
+    adresse: "Schoenenbourg, 67160 Drachenbronn-Birlenbach",
+    telephone: "+33607367622",
+    horaires: {
+      fr: "Lun: 17:30–20:00 | Mer: 16:30-19:00 | Ven: 18:30-19:30 | Sam: 13:30–15:00 (fermé Mar, Jeu et Dim)",
+      en: "Mon: 17:30–20:00 | Wed: 16:30-19:00 | Fri: 18:30-19:30 | Sat: 13:30–15:00 (Closed Tue, Thu and Sun)",
+      de: "Mon: 17:30–20:00 | Mit: 16:30-19:00 | Fre: 18:30-19:30 | Sam: 13:30–15:00 (Die, Don und Son geschlossen)"
+    }
+  },
+  {
     lat: 48.969844080500195, lng: 7.989058417355533, type: "commerce",
     nom: { fr: "Au Fournil de Seebach", en: "Au Fournil de Seebach", de: "Au Fournil de Seebach" },
     desc: { fr: "Boulangerie", en: "Bakery", de: "Bäckerei" },
@@ -224,19 +377,6 @@ const lieux = [
     }
   },
   {
-    lat: 48.95335220486241, lng: 7.939271849389076, type: "commerce",
-    nom: { fr: "Boulangerie Pâtisserie Fischer", en: "Bakery Fischer", de: "Bäckerei Fischer" },
-    desc: { fr: "Boulangerie", en: "Bakery", de: "Bäckerei" },
-    image: "https://www.bonjour-elsass.de/wp-content/uploads/2016/08/foto-1-11.jpg",
-    adresse: "52 Rue Principale, Hunspach",
-    telephone: "+33388804236",
-    horaires: {
-      fr: "Lun-Ven: 5:00-12:30 15:00 18:30 | Sam: 5:00-12:30 15:00 18:30 (Fermé Dim)",
-      en: "Mon-Fri: 5:00-12:30 15:00 18:30 | Sat: 5:00-12:30 15:00 18:30 (Closed Sun)",
-      de: "Mon-Fre: 5:00-12:30 15:00 18:30 | Sam: 5:00-12:30 15:00 18:30 (Son geschlossen)"
-    }
-  },
-  {
     lat: 48.96989729346783, lng: 7.988695672603085, type: "commerce",
     nom: { fr: "Boucherie Foeller", en: "Butchery Foeller", de: "Metzgerei Foeller" },
     adresse: "67 Rue des Églises, Seebach",
@@ -247,45 +387,6 @@ const lieux = [
       fr: "Lun-Mar-Mer-Sam: 8:00-12:00 | Jeu-Ven: 8:00-18:00 (Fermé Dim)",
       en: "Mon-Tue-Wed-Sat: 8:00-12:00 | Thu-Fri: 8:00-18:00 (Closed Sun)",
       de: "Mon-Die-Mit-Sam: 8:00-12:00 | Don-Fre: 8:00-18:00 (Son geschlossen)"
-    }
-  },
-  {
-    lat: 48.99065019591642, lng: 8.039502139420115, type: "commerce",
-    nom: { fr: "Boucherie Sigrist", en: "Butchery Sigrist", de: "Metzgerei Sigrist" },
-    adresse: "158 Rue Principale, Schleithal",
-    site_web: "http://www.traiteur-sigrist.net/",
-    image: "https://www.traiteur-sigrist.net/upload/galerie/DSC04472.JPG",
-    telephone: "+33388943111",
-    horaires: {
-      fr: "Mar-Jeu-Ven: 8:00-12:00 14:30-18:00 | Mer: 8:00-12:00 | Sam: 8:00-12:00 14:00-16:00 (Fermé Dim et Lun)",
-      en: "Tue-Thu-Fri: 8:00-12:00 14:30-18:00 | Wed: 8:00-12:00 | Sat: 8:00-12:00 14:00-16:00 (Closed Sun and Mon)",
-      de: "Die-Don-Fre: 8:00-12:00 14:30-18:00 | Mit: 8:00-12:00 | Sam: 8:00-12:00 14:00-16:00 (Son und Mon geschlossen)"
-    }
-  },
-  {
-    lat: 49.03049062642089, lng: 7.9546512222358325, type: "commerce",
-    nom: { fr: "Lidl", en: "Lidl", de: "Lidl" },
-    adresse: "4 All. des Peupliers Altenstadt, Wissembourg",
-    desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
-    site_web: "https://www.lidl.fr/",
-    image: "https://www.alsace-verte.com/wp-content/uploads/wpetourisme/219007815_12020-1200x812.jpg",
-    horaires: {
-      fr: "Lun-Sam: 8:00-20:00 (Fermé Dim)",
-      en: "Mon-Sat: 8:00-20:00 (Closed Sun)",
-      de: "Mon-Sam: 8:00-20:00 (Son geschlossen)"
-    }
-  },
-  {
-    lat: 48.929665909455885, lng: 7.899253279934793, type: "commerce",
-    nom: { fr: "E.Leclerc", en: "E.Leclerc", de: "E.Leclerc" },
-    adresse: "2 Rue Georges Chretien Rosentritt, Soultz-sous-Forêts",
-    desc: { fr: "Supermarché", en: "Supermarket", de: "Supermarkt" },
-    site_web: "https://e.leclerc/mag/e-leclerc-soultz-sous-forets",
-    image: "https://medias.referentiel.galec.net/GALEC/Magasins/BIM/1658304428551.jpeg",
-    horaires: {
-      fr: "Lun-Sam: 8:00-19:30 (Fermé Dim)",
-      en: "Mon-Sat: 8:00-19:30 (Closed Sun)",
-      de: "Mon-Sam: 8:00-19:30 (Son geschlossen)"
     }
   },
   {
@@ -322,6 +423,7 @@ lieux.forEach(lieu => {
   let calqueCible = calqueCommerces;
   if (lieu.type === "tourisme") { iconeChoisie = iconeBleue; calqueCible = calqueTourisme; }
   else if (lieu.type === "resto") { iconeChoisie = iconeJaune; calqueCible = calqueResto; }
+  else if (lieu.type === "loisir") { iconeChoisie = iconeNoire; calqueCible = calqueLoisir; }
   const marqueur = L.marker([lieu.lat, lieu.lng], { icon: iconeChoisie });
   marqueur.bindPopup(genererContenuPopup(lieu));
   calqueCible.addLayer(marqueur);
@@ -331,6 +433,7 @@ const filtres = {};
 filtres[texteUI.filtreCommerce] = calqueCommerces;
 filtres[texteUI.filtreTourisme] = calqueTourisme;
 filtres[texteUI.filtreResto] = calqueResto;
+filtres[texteUI.filtreLoisir] = calqueLoisir;
 L.control.layers(null, filtres, { collapsed: false }).addTo(maCarte);
 </script>
 </body>
